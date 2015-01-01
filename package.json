@@ -1,0 +1,38 @@
+{
+  "name": "splashicon-generator",
+  "version": "0.1.0",
+  "description": "Automatic icon & splash resizing for Cordova",
+  "main": "index.js",
+  "preferGlobal": "true",
+  "directories": {
+    "bin": "./bin"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eberlitz/splashicon-generator.git"
+  },
+  "keywords": [
+    "cordova",
+    "phonegap",
+    "icon",
+    "splash",
+    "resize"
+  ],
+  "author": "Eduardo Eidelwein Berlitz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eberlitz/splashicon-generator/issues"
+  },
+  "homepage": "https://github.com/eberlitz/splashicon-generator",
+  "dependencies": {
+    "colors": "^0.6.2",
+    "imagemagick": "^0.1.3",
+    "node-fs": "^0.1.7",
+    "q": "^1.0.1",
+    "underscore": "^1.6.0",
+    "xml2js": "^0.4.3"
+  }
+}
