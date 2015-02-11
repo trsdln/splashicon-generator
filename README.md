@@ -1,6 +1,6 @@
 # splashicon-generator
 
-Automatic icon and splash screen resizing for Phonegap. Create an icon in the root folder of your Phonegap project and use ```icon.png``` and a ```splash.png``` to automatically resize and copy it for all the platforms your project supports (currenty works with iOS and Android).
+Automatic icon and splash screen resizing for PhoneGap. Create an icon in the root folder of your PhoneGap project and use ```icon.png``` and a ```splash.png``` to automatically resize and copy it for all the platforms your project supports (currenty works with iOS and Android).
 
 ### Installation
 
@@ -13,7 +13,10 @@ Via NPM install (recommended):
  * Download the source from Github
  * Enter the project directory and type the following command:
 
-    $ npm link
+	
+	$ npm link
+
+---
 
 ### Usage
 
@@ -22,6 +25,8 @@ Create an ```icon.png``` and a ```splash.png``` file in the root folder of your 
      $ splashicon-generator
 
 For optimal results, your icon file has to be square, and at least 1024x1024px and your splash file has a vertical rectangle, and at least 2208x3925px.
+
+---
 
 ### Requirements
 
@@ -36,6 +41,8 @@ On linux:
     $ sudo apt-get install imagemagick
 
 On windows see http://www.imagemagick.org/script/binary-releases.php#windows
+
+---
 
 ### Configuring icons
 
@@ -64,6 +71,8 @@ Include in your ```config.xml``` file:
 <icon src="res/icons/wp8/ApplicationIcon.png" gap:platform="winphone" />
 <icon src="res/icons/wp8/Background.png" gap:platform="winphone" gap:role="background" />
 ```
+
+---
 
 ### Configuring splash
 
@@ -94,6 +103,8 @@ Include in your ```config.xml``` file:
 
 <gap:splash src="res/splash/wp8/SplashScreenImage.jpg" gap:platform="winphone" />
 ```
+
+---
 
 ### License
 

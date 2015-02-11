@@ -1,7 +1,7 @@
 {
   "name": "splashicon-generator",
-  "version": "0.1.2",
-  "description": "Automatic icon & splash resizing for Cordova",
+  "version": "0.1.3",
+  "description": "Automatic icon & splash resizing for PhoneGap",
   "main": "index.js",
   "preferGlobal": "true",
   "directories": {
