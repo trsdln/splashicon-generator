@@ -1,14 +1,23 @@
 # splashicon-generator
 
-Automatic icon resizing for Cordova. Create an icon in the root folder of your Cordova project and use cordova-icon to automatically resize and copy it for all the platforms your project supports (currenty works with iOS and Android).
+Automatic icon and splash screen resizing for Phonegap. Create an icon in the root folder of your Phonegap project and use ```icon.png``` and a ```splash.png``` to automatically resize and copy it for all the platforms your project supports (currenty works with iOS and Android).
 
 ### Installation
 
-     $ sudo npm install splashicon-generator -g
+Via NPM install (recommended):
+
+     $ npm install splashicon-generator -g
+
+ Via NPM link:
+
+ * Download the source from Github
+ * Enter the project directory and type the following command:
+
+    $ npm link
 
 ### Usage
 
-Create an ```icon.png``` or a ```splash.png``` file in the root folder of your cordova project and run:
+Create an ```icon.png``` and a ```splash.png``` file in the root folder of your cordova project and run:
 
      $ splashicon-generator
 
