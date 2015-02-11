@@ -159,7 +159,7 @@ var generateIcon = function(platform, icon) {
             srcPath: settings.ICON_FILE,
             dstPath: filePath,
             quality: 1,
-            format: 'png',
+            format: icon.name.replace(/.*\.(\w+)$/i,'$1').toLowerCase(),
             width: icon.size,
             height: icon.size,
         }, function(err, stdout, stderr) {
@@ -262,7 +262,7 @@ var generateSplash = function(platform, splash) {
             srcPath: settings.SPLASH_FILE,
             dstPath: filePath,
             quality: 1,
-            format: 'png',
+            format: splash.name.replace(/.*\.(\w+)$/i,'$1').toLowerCase(),
             width: splash.width,
             height: splash.height,
         }, function(err, stdout, stderr) {
