@@ -19,93 +19,41 @@ var getPlatformIcons = function() {
     platforms.push({
         name: 'ios',
         isAdded: true,
-        iconsPath: 'res/ios/',
-        icons: [{
-            name: 'icon-40.png',
-            size: 40
-        }, {
-            name: 'icon-40@2x.png',
-            size: 80
-        }, {
-            name: 'icon-50.png',
-            size: 50
-        }, {
-            name: 'icon-50@2x.png',
-            size: 100
-        }, {
-            name: 'icon-60.png',
-            size: 60
-        }, {
-            name: 'icon-60@2x.png',
-            size: 120
-        }, {
-            name: 'icon-60@3x.png',
-            size: 180
-        }, {
-            name: 'icon-72.png',
-            size: 72
-        }, {
-            name: 'icon-72@2x.png',
-            size: 144
-        }, {
-            name: 'icon-76.png',
-            size: 76
-        }, {
-            name: 'icon-76@2x.png',
-            size: 152
-        }, {
-            name: 'icon-small.png',
-            size: 29
-        }, {
-            name: 'icon-small@2x.png',
-            size: 58
-        }, {
-            name: 'icon.png',
-            size: 57
-        }, {
-            name: 'icon@2x.png',
-            size: 114
-        }, ]
+        iconsPath: 'res/icons/ios/',
+        icons: [
+            { name: 'icon-57.png', size: 57 }, // iPhone
+            { name: 'icon-72.png', size: 72 }, // iPad
+            { name: 'icon-114.png', size: 114 }, // iPhone 4 Retina Display, iPad 3 Retina Display
+            { name: 'icon-1024.png', size: 1024 }, // iTunes
+            { name: 'icon-29.png', size: 29 }, // iPhone Settings/Spotlight, iPad Settings
+            { name: 'icon-48.png', size: 48 }, // iPad Spotlight
+            { name: 'icon-58.png', size: 58 }, // iPhone 4 Settings/Spotlight
+            { name: 'icon-64.png', size: 64 }, // document icon
+            { name: 'icon-320.png', size: 320 } // document icon
+        ]
     });
     platforms.push({
         name: 'android',
-        iconsPath: 'res/android/',
-        isAdded: true, //fs.existsSync('platforms/android'),
-        icons: [{
-            name: 'icon-icon.png',
-            size: 96
-        }, {
-            name: 'icon-hdpi.png',
-            size: 72
-        }, {
-            name: 'icon-ldpi.png',
-            size: 36
-        }, {
-            name: 'icon-mdpi.png',
-            size: 48
-        }, {
-            name: 'icon-xhdpi.png',
-            size: 96
-        }, {
-            name: 'icon-xxhdpi.png',
-            size: 144
-        }, {
-            name: 'icon-xxxhdpi.png',
-            size: 192
-        }]
+        iconsPath: 'res/icons/android/',
+        isAdded: true,
+        icons: [
+            { name: 'icon-ldpi.png', size: 36 },
+            { name: 'icon-mdpi.png', size: 48 },
+            { name: 'icon-hdpi.png', size: 72 },
+            { name: 'icon-xhdpi.png', size: 96 },
+            { name: 'icon-xxhdpi.png', size: 144 },
+            { name: 'icon-xxxhdpi.png', size: 192 }
+        ]
     });
 
     platforms.push({
         name: 'wp8',
-        iconsPath: 'res/wp8/',
-        isAdded: true, //fs.existsSync('platforms/android'),
-        icons: [{
-            name: 'ApplicationIcon.png',
-            size: 99
-        }, {
-            name: 'Background.png',
-            size: 159
-        }]
+        iconsPath: 'res/icons/wp8/',
+        isAdded: true,
+        icons: [
+            { name: 'ApplicationIcon.png', size: 99 }, // Icon
+            { name: 'Background.png', size: 173} // Tile Icon
+        ]
     });
     // TODO: add all platforms
     deferred.resolve(platforms);
@@ -124,47 +72,42 @@ var getPlatformSplashs = function() {
     platforms.push({
         name: 'ios',
         isAdded: true,
-        splashPath: 'res/ios/',
+        splashPath: 'res/splash/ios/',
         splash: [
-            { name: 'Default~iphone.png', width: 320, height: 480 },
-            { name: 'Default@2x~iphone.png', width: 640, height: 960 },
-            { name: 'Default-Portrait~ipad.png', width: 768, height: 1024 },
-            { name: 'Default-Portrait@2x~ipad.png', width: 1536, height: 2048 },
-            { name: 'Default-Landscape~ipad.png', width: 1024, height: 768 },
-            { name: 'Default-Landscape@2x~ipad.png', width: 2048, height: 1536 },
-            { name: 'Default-568h@2x~iphone.png', width: 640, height: 1136 },
-            { name: 'Default-667h.png', width: 750, height: 1334 },
-            { name: 'Default-736h.png', width: 1242, height: 2208 },
-            { name: 'Default-Landscape-736h.png', width: 2208, height: 1242 },
+            { name: 'Default.png', width: 320, height: 480 }, // iPhone
+            { name: 'Default@2x.png', width: 640, height: 960 }, // iPhone Retina
+            { name: 'Default-568h@2x.png', width: 640, height: 1136 }, // iPhone 5 Retina
+            { name: 'Default-667h@2x.png', width: 750, height: 1334 }, // iPhone 6
+            { name: 'Default-Portrait-736h@3x.png', width: 1242, height: 2208 }, // iPhone 6 Plus
+            { name: 'Default-Landscape-736h@3x.png', width: 2208, height: 1242 }, // iPhone 6 Plus
+            { name: 'Default-Portrait.png', width: 768, height: 1024 }, // iPad
+            { name: 'Default-Landscape.png', width: 1024, height: 768 }, // iPad
+            { name: 'Default-Portrait@2x.png', width: 1536, height: 2048 }, // iPad Retina
+            { name: 'Default-Landscape@2x.png', width: 2048, height: 1536 } // iPad Retina
         ]
     });
     platforms.push({
         name: 'android',
         isAdded: true,
-        splashPath: 'res/android/',
+        splashPath: 'res/splash/android/',
         splash: [
-            { name: 'splash-land-ldpi.png', width: 320, height: 200 },
-            { name: 'splash-land-mdpi.png', width: 480, height: 320 },
-            { name: 'splash-land-hdpi.png', width: 800, height: 480 },
-            { name: 'splash-land-xhdpi.png', width: 1280, height: 720 },
-            { name: 'splash-land-xxhdpi.png', width: 1440, height: 960 },
-            { name: 'splash-land-xxxhdpi.png', width: 1920, height: 1280 },
-
-            { name: 'splash-port-ldpi.png', width: 200, height: 320 },
-            { name: 'splash-port-mdpi.png', width: 320, height: 480 },
-            { name: 'splash-port-hdpi.png', width: 480, height: 800 },
-            { name: 'splash-port-xhdpi.png', width: 720, height: 1280 },
-            { name: 'splash-port-xxhdpi.png', width: 960, height: 1440 },
-            { name: 'splash-port-xxxhdpi.png', width: 1280, height: 1920 }
+            { name: 'ldpi.png', width: 200, height: 320 },
+            { name: 'landscape-ldpi.png', width: 320, height: 200 },
+            { name: 'mdpi.png', width: 320, height: 480 },
+            { name: 'landscape-mdpi.png', width: 480, height: 320 },
+            { name: 'hdpi.png', width: 480, height: 800 },
+            { name: 'landscape-hdpi.png', width: 800, height: 480 },
+            { name: 'xhdpi.png', width: 720, height: 1280 },
+            { name: 'landscape-xhdpi.png', width: 1280, height: 720 }
         ]
     });
 
     platforms.push({
         name: 'wp8',
         isAdded: true,
-        splashPath: 'res/wp8/',
+        splashPath: 'res/splash/wp8/',
         splash: [
-            { name: 'SplashScreenImage.png', width: 768, height: 1280 }
+            { name: 'SplashScreenImage.jpg', width: 480, height: 800 }
         ]
     });
 
