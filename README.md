@@ -4,17 +4,7 @@ Automatic icon and splash screen resizing for PhoneGap. Create an icon in the ro
 
 ### Installation
 
-Via NPM install (recommended):
-
      $ npm install splashicon-generator -g
-
- Via NPM link:
-
- * Download the source from Github
- * Enter the project directory and type the following command:
-
-	
-	$ npm link
 
 ---
 
