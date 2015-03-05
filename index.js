@@ -21,17 +21,34 @@ var getPlatformIcons = function() {
         isAdded: true,
         iconsPath: 'res/icons/ios/',
         icons: [
-            { name: 'icon-57.png', size: 57 }, // iPhone
-            { name: 'icon-72.png', size: 72 }, // iPad
-            { name: 'icon-114.png', size: 114 }, // iPhone 4 Retina Display, iPad 3 Retina Display
-            { name: 'icon-1024.png', size: 1024 }, // iTunes
-            { name: 'icon-29.png', size: 29 }, // iPhone Settings/Spotlight, iPad Settings
-            { name: 'icon-48.png', size: 48 }, // iPad Spotlight
-            { name: 'icon-58.png', size: 58 }, // iPhone 4 Settings/Spotlight
-            { name: 'icon-64.png', size: 64 }, // document icon
-            { name: 'icon-320.png', size: 320 } // document icon
+            // App Store
+            { name: "icon-1024.png", size: 1024 },
+            // iOS 8.0+, iPhone 6 Plus
+            { name: "icon-60@3x.png", size: 180 },
+            // iOS 7.0+, iPhone / iPod Touch  -->
+            { name: "icon-60.png", size: 60 },
+            { name: "icon-60@2x.png", size: 120 },
+            // iPad -->
+            { name: "icon-76.png", size: 76 },
+            { name: "icon-76@2x.png", size: 152 },
+            // iOS 6.1, Spotlight Icon -->
+            { name: "icon-40.png", size: 40 },
+            { name: "icon-40@2x.png", size: 80 },
+            // iPhone / iPod Touch -->
+            { name: "icon.png", size: 57 },
+            { name: "icon@2x.png", size: 114 },
+            // iPad -->
+            { name: "icon-72.png", size: 72 },
+            { name: "icon-72@2x.png", size: 144 },
+            // iPhone Spotlight and Settings Icon -->
+            { name: "icon-small.png", size: 29 },
+            { name: "icon-small@2x.png", size: 58 },
+            // iPad Spotlight and Settings Icon -->
+            { name: "icon-50.png", size: 50 },
+            { name: "icon-50@2x.png", size: 100 }
         ]
     });
+
     platforms.push({
         name: 'android',
         iconsPath: 'res/icons/android/',
@@ -52,7 +69,7 @@ var getPlatformIcons = function() {
         isAdded: true,
         icons: [
             { name: 'ApplicationIcon.png', size: 99 }, // Icon
-            { name: 'Background.png', size: 173} // Tile Icon
+            { name: 'Background.png', size: 159} // Tile Icon
         ]
     });
     // TODO: add all platforms

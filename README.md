@@ -1,6 +1,6 @@
 # splashicon-generator
 
-Automatic icon and splash screen resizing for Phonegap. Create an icon in the root folder of your Phonegap project and use ```icon.png``` and a ```splash.png``` to automatically resize and copy it for all the platforms your project supports (currenty works with iOS and Android).
+Automatic icon and splash screen resizing for PhoneGap. Create an icon in the root folder of your PhoneGap project and use ```icon.png``` and a ```splash.png``` to automatically resize and copy it for all the platforms your project supports (currently works with iOS, Android and Windows Phone 8).
 
 ### Installation
 
@@ -13,7 +13,10 @@ Via NPM install (recommended):
  * Download the source from Github
  * Enter the project directory and type the following command:
 
-    $ npm link
+	
+	$ npm link
+
+---
 
 ### Usage
 
@@ -22,6 +25,8 @@ Create an ```icon.png``` and a ```splash.png``` file in the root folder of your 
      $ splashicon-generator
 
 For optimal results, your icon file has to be square, and at least 1024x1024px and your splash file has a vertical rectangle, and at least 2208x3925px.
+
+---
 
 ### Requirements
 
@@ -37,6 +42,8 @@ On linux:
 
 On windows see http://www.imagemagick.org/script/binary-releases.php#windows
 
+---
+
 ### Configuring icons
 
 Include in your ```config.xml``` file:
@@ -44,15 +51,37 @@ Include in your ```config.xml``` file:
 ```xml
 <icon src="icon.png" />
 
-<icon src="res/icons/ios/icon-57.png" gap:platform="ios" width="57" height="57" />
-<icon src="res/icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
-<icon src="res/icons/ios/icon-114.png" gap:platform="ios" width="114" height="114" />
+<!-- App Store -->
 <icon src="res/icons/ios/icon-1024.png" gap:platform="ios" width="1024" height="1024" />
-<icon src="res/icons/ios/icon-29.png" gap:platform="ios" width="29" height="29" />
-<icon src="res/icons/ios/icon-48.png" gap:platform="ios" width="48" height="48" />
-<icon src="res/icons/ios/icon-58.png" gap:platform="ios" width="58" height="58" />
-<icon src="res/icons/ios/icon-64.png" gap:platform="ios" width="64" height="64" />
-<icon src="res/icons/ios/icon-320.png" gap:platform="ios" width="320" height="320" />
+
+<!-- iOS 8.0+ -->
+<!-- iPhone 6 Plus  -->
+<icon src="res/icons/ios/icon-60@3x.png" gap:platform="ios" width="180" height="180" />
+<!-- iOS 7.0+ -->
+<!-- iPhone / iPod Touch  -->
+<icon src="res/icons/ios/icon-60.png" gap:platform="ios" width="60" height="60" />
+<icon src="res/icons/ios/icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+<!-- iPad -->
+<icon src="res/icons/ios/icon-76.png" gap:platform="ios" width="76" height="76" />
+<icon src="res/icons/ios/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+<!-- iOS 6.1 -->
+<!-- Spotlight Icon -->
+<icon src="res/icons/ios/icon-40.png" gap:platform="ios" width="40" height="40" />
+<icon src="res/icons/ios/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+<!-- iPhone / iPod Touch -->
+<icon src="res/icons/ios/icon.png" gap:platform="ios" width="57" height="57" />
+<icon src="res/icons/ios/icon@2x.png" gap:platform="ios" width="114" height="114" />
+<!-- iPad -->
+<icon src="res/icons/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+<icon src="res/icons/ios/icon-72@2x.png" gap:platform="ios" width="144" height="144" />
+<!-- iPhone Spotlight and Settings Icon -->
+<icon src="res/icons/ios/icon-small.png" gap:platform="ios" width="29" height="29" />
+<icon src="res/icons/ios/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+<!-- iPad Spotlight and Settings Icon -->
+<icon src="res/icons/ios/icon-50.png" gap:platform="ios" width="50" height="50" />
+<icon src="res/icons/ios/icon-50@2x.png" gap:platform="ios" width="100" height="100" />
+
+
 
 <icon src="res/icons/android/icon-ldpi.png" gap:platform="android" gap:qualifier="ldpi" />
 <icon src="res/icons/android/icon-mdpi.png" gap:platform="android" gap:qualifier="mdpi" />
@@ -64,6 +93,8 @@ Include in your ```config.xml``` file:
 <icon src="res/icons/wp8/ApplicationIcon.png" gap:platform="winphone" />
 <icon src="res/icons/wp8/Background.png" gap:platform="winphone" gap:role="background" />
 ```
+
+---
 
 ### Configuring splash
 
@@ -94,6 +125,8 @@ Include in your ```config.xml``` file:
 
 <gap:splash src="res/splash/wp8/SplashScreenImage.jpg" gap:platform="winphone" />
 ```
+
+---
 
 ### License
 
