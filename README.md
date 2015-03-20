@@ -2,19 +2,11 @@
 
 Automatic icon and splash screen resizing for PhoneGap. Create an icon in the root folder of your PhoneGap project and use ```icon.png``` and a ```splash.png``` to automatically resize and copy it for all the platforms your project supports (currently works with iOS, Android and Windows Phone 8).
 
+Consider using the base icon and splash images in the `model` folder, so that images are not cropped and resized incorrectly.
+
 ### Installation
 
-Via NPM install (recommended):
-
      $ npm install splashicon-generator -g
-
- Via NPM link:
-
- * Download the source from Github
- * Enter the project directory and type the following command:
-
-	
-	$ npm link
 
 ---
 

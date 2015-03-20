@@ -22,30 +22,71 @@ var getPlatformIcons = function() {
         iconsPath: 'res/icons/ios/',
         icons: [
             // App Store
-            { name: "icon-1024.png", size: 1024 },
+            {
+                name: "icon-1024.png",
+                size: 1024
+            },
             // iOS 8.0+, iPhone 6 Plus
-            { name: "icon-60@3x.png", size: 180 },
+            {
+                name: "icon-60@3x.png",
+                size: 180
+            },
             // iOS 7.0+, iPhone / iPod Touch  -->
-            { name: "icon-60.png", size: 60 },
-            { name: "icon-60@2x.png", size: 120 },
+            {
+                name: "icon-60.png",
+                size: 60
+            }, {
+                name: "icon-60@2x.png",
+                size: 120
+            },
             // iPad -->
-            { name: "icon-76.png", size: 76 },
-            { name: "icon-76@2x.png", size: 152 },
+            {
+                name: "icon-76.png",
+                size: 76
+            }, {
+                name: "icon-76@2x.png",
+                size: 152
+            },
             // iOS 6.1, Spotlight Icon -->
-            { name: "icon-40.png", size: 40 },
-            { name: "icon-40@2x.png", size: 80 },
+            {
+                name: "icon-40.png",
+                size: 40
+            }, {
+                name: "icon-40@2x.png",
+                size: 80
+            },
             // iPhone / iPod Touch -->
-            { name: "icon.png", size: 57 },
-            { name: "icon@2x.png", size: 114 },
+            {
+                name: "icon.png",
+                size: 57
+            }, {
+                name: "icon@2x.png",
+                size: 114
+            },
             // iPad -->
-            { name: "icon-72.png", size: 72 },
-            { name: "icon-72@2x.png", size: 144 },
+            {
+                name: "icon-72.png",
+                size: 72
+            }, {
+                name: "icon-72@2x.png",
+                size: 144
+            },
             // iPhone Spotlight and Settings Icon -->
-            { name: "icon-small.png", size: 29 },
-            { name: "icon-small@2x.png", size: 58 },
+            {
+                name: "icon-small.png",
+                size: 29
+            }, {
+                name: "icon-small@2x.png",
+                size: 58
+            },
             // iPad Spotlight and Settings Icon -->
-            { name: "icon-50.png", size: 50 },
-            { name: "icon-50@2x.png", size: 100 }
+            {
+                name: "icon-50.png",
+                size: 50
+            }, {
+                name: "icon-50@2x.png",
+                size: 100
+            }
         ]
     });
 
@@ -53,23 +94,39 @@ var getPlatformIcons = function() {
         name: 'android',
         iconsPath: 'res/icons/android/',
         isAdded: true,
-        icons: [
-            { name: 'icon-ldpi.png', size: 36 },
-            { name: 'icon-mdpi.png', size: 48 },
-            { name: 'icon-hdpi.png', size: 72 },
-            { name: 'icon-xhdpi.png', size: 96 },
-            { name: 'icon-xxhdpi.png', size: 144 },
-            { name: 'icon-xxxhdpi.png', size: 192 }
-        ]
+        icons: [{
+            name: 'icon-ldpi.png',
+            size: 36
+        }, {
+            name: 'icon-mdpi.png',
+            size: 48
+        }, {
+            name: 'icon-hdpi.png',
+            size: 72
+        }, {
+            name: 'icon-xhdpi.png',
+            size: 96
+        }, {
+            name: 'icon-xxhdpi.png',
+            size: 144
+        }, {
+            name: 'icon-xxxhdpi.png',
+            size: 192
+        }]
     });
 
     platforms.push({
         name: 'wp8',
         iconsPath: 'res/icons/wp8/',
         isAdded: true,
-        icons: [
-            { name: 'ApplicationIcon.png', size: 99 }, // Icon
-            { name: 'Background.png', size: 159} // Tile Icon
+        icons: [{
+                name: 'ApplicationIcon.png',
+                size: 99
+            }, // Icon
+            {
+                name: 'Background.png',
+                size: 159
+            } // Tile Icon
         ]
     });
     // TODO: add all platforms
@@ -90,42 +147,106 @@ var getPlatformSplashs = function() {
         name: 'ios',
         isAdded: true,
         splashPath: 'res/splash/ios/',
-        splash: [
-            { name: 'Default.png', width: 320, height: 480 }, // iPhone
-            { name: 'Default@2x.png', width: 640, height: 960 }, // iPhone Retina
-            { name: 'Default-568h@2x.png', width: 640, height: 1136 }, // iPhone 5 Retina
-            { name: 'Default-667h@2x.png', width: 750, height: 1334 }, // iPhone 6
-            { name: 'Default-Portrait-736h@3x.png', width: 1242, height: 2208 }, // iPhone 6 Plus
-            { name: 'Default-Landscape-736h@3x.png', width: 2208, height: 1242 }, // iPhone 6 Plus
-            { name: 'Default-Portrait.png', width: 768, height: 1024 }, // iPad
-            { name: 'Default-Landscape.png', width: 1024, height: 768 }, // iPad
-            { name: 'Default-Portrait@2x.png', width: 1536, height: 2048 }, // iPad Retina
-            { name: 'Default-Landscape@2x.png', width: 2048, height: 1536 } // iPad Retina
+        splash: [{
+                name: 'Default.png',
+                width: 320,
+                height: 480
+            }, // iPhone
+            {
+                name: 'Default@2x.png',
+                width: 640,
+                height: 960
+            }, // iPhone Retina
+            {
+                name: 'Default-568h@2x.png',
+                width: 640,
+                height: 1136
+            }, // iPhone 5 Retina
+            {
+                name: 'Default-667h@2x.png',
+                width: 750,
+                height: 1334
+            }, // iPhone 6
+            {
+                name: 'Default-Portrait-736h@3x.png',
+                width: 1242,
+                height: 2208
+            }, // iPhone 6 Plus
+            {
+                name: 'Default-Landscape-736h@3x.png',
+                width: 2208,
+                height: 1242
+            }, // iPhone 6 Plus
+            {
+                name: 'Default-Portrait.png',
+                width: 768,
+                height: 1024
+            }, // iPad
+            {
+                name: 'Default-Landscape.png',
+                width: 1024,
+                height: 768
+            }, // iPad
+            {
+                name: 'Default-Portrait@2x.png',
+                width: 1536,
+                height: 2048
+            }, // iPad Retina
+            {
+                name: 'Default-Landscape@2x.png',
+                width: 2048,
+                height: 1536
+            } // iPad Retina
         ]
     });
     platforms.push({
         name: 'android',
         isAdded: true,
         splashPath: 'res/splash/android/',
-        splash: [
-            { name: 'ldpi.png', width: 200, height: 320 },
-            { name: 'landscape-ldpi.png', width: 320, height: 200 },
-            { name: 'mdpi.png', width: 320, height: 480 },
-            { name: 'landscape-mdpi.png', width: 480, height: 320 },
-            { name: 'hdpi.png', width: 480, height: 800 },
-            { name: 'landscape-hdpi.png', width: 800, height: 480 },
-            { name: 'xhdpi.png', width: 720, height: 1280 },
-            { name: 'landscape-xhdpi.png', width: 1280, height: 720 }
-        ]
+        splash: [{
+            name: 'ldpi.png',
+            width: 200,
+            height: 320
+        }, {
+            name: 'landscape-ldpi.png',
+            width: 320,
+            height: 200
+        }, {
+            name: 'mdpi.png',
+            width: 320,
+            height: 480
+        }, {
+            name: 'landscape-mdpi.png',
+            width: 480,
+            height: 320
+        }, {
+            name: 'hdpi.png',
+            width: 480,
+            height: 800
+        }, {
+            name: 'landscape-hdpi.png',
+            width: 800,
+            height: 480
+        }, {
+            name: 'xhdpi.png',
+            width: 720,
+            height: 1280
+        }, {
+            name: 'landscape-xhdpi.png',
+            width: 1280,
+            height: 720
+        }]
     });
 
     platforms.push({
         name: 'wp8',
         isAdded: true,
         splashPath: 'res/splash/wp8/',
-        splash: [
-            { name: 'SplashScreenImage.jpg', width: 480, height: 800 }
-        ]
+        splash: [{
+            name: 'SplashScreenImage.jpg',
+            width: 480,
+            height: 800
+        }]
     });
 
     deferred.resolve(platforms);
@@ -176,7 +297,7 @@ var generateIcon = function(platform, icon) {
             srcPath: settings.ICON_FILE,
             dstPath: filePath,
             quality: 1,
-            format: icon.name.replace(/.*\.(\w+)$/i,'$1').toLowerCase(),
+            format: icon.name.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
             width: icon.size,
             height: icon.size,
         }, function(err, stdout, stderr) {
@@ -279,7 +400,7 @@ var generateSplash = function(platform, splash) {
             srcPath: settings.SPLASH_FILE,
             dstPath: filePath,
             quality: 1,
-            format: splash.name.replace(/.*\.(\w+)$/i,'$1').toLowerCase(),
+            format: splash.name.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
             width: splash.width,
             height: splash.height,
         }, function(err, stdout, stderr) {
@@ -366,29 +487,26 @@ Q.all([validIconExists(), validSplashExists()])
     .then(function(results) {
         var hasIcon = results[0] === true;
         var hasSplash = results[1] === true;
-
-        var promises = [];
+        var promise;
 
         if (!hasIcon && !hasSplash) {
             console.log(arguments);
-            promises.push(Q.reject());
+            promise = Q.reject();
         }
 
         if (hasIcon) {
-            promises.push(
-                getPlatformIcons()
-                .then(generateIcons)
-            );
+            promise = Q.when(promise)
+                .then(getPlatformIcons)
+                .then(generateIcons);
         }
 
         if (hasSplash) {
-            promises.push(
-                getPlatformSplashs()
-                .then(generateSplashes)
-            );
+            promise = Q.when(promise)
+                .then(getPlatformSplashs)
+                .then(generateSplashes);
         }
 
-        return Q.all(promises);
+        return Q.when(promise);
     })
     .catch(function(err) {
         if (err) {
