@@ -21,6 +21,11 @@ var getPlatformIcons = function() {
         isAdded: true,
         iconsPath: 'res/icons/ios/',
         icons: [
+            // Default icon (avoid Apple submit error ITMS-90032)
+            {
+                name: "../../../icon.png",
+                size: 57
+            },
             // App Store
             {
                 name: "icon-1024.png",
@@ -258,8 +263,8 @@ var getPlatformSplashs = function() {
  * TODO: add option to get these values as CLI params
  */
 var settings = {};
-settings.ICON_FILE = 'icon.png';
-settings.SPLASH_FILE = 'splash.png';
+settings.ICON_FILE = 'model/icon.png';
+settings.SPLASH_FILE = 'model/splash.png';
 /**
  * @var {Object} console utils
  */
