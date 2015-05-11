@@ -26,11 +26,6 @@ var getPlatformIcons = function() {
                 name: "../../../icon.png",
                 size: 57
             },
-            // App Store
-            {
-                name: "icon-1024.png",
-                size: 1024
-            },
             // iOS 8.0+, iPhone 6 Plus
             {
                 name: "icon-60@3x.png",
@@ -91,6 +86,11 @@ var getPlatformIcons = function() {
             }, {
                 name: "icon-50@2x.png",
                 size: 100
+            },
+            // App Store
+            {
+                name: "icon-1024.jpg",
+                size: 1024
             }
         ]
     });
@@ -117,6 +117,9 @@ var getPlatformIcons = function() {
         }, {
             name: 'icon-xxxhdpi.png',
             size: 192
+        }, {
+            name: "icon-512.png",
+            size: 512
         }]
     });
 
@@ -125,14 +128,15 @@ var getPlatformIcons = function() {
         iconsPath: 'res/icons/wp8/',
         isAdded: true,
         icons: [{
-                name: 'ApplicationIcon.png',
-                size: 99
-            }, // Icon
-            {
-                name: 'Background.png',
-                size: 159
-            } // Tile Icon
-        ]
+            name: 'ApplicationIcon.png',
+            size: 99
+        }, {
+            name: 'Background.png',
+            size: 159
+        }, {
+            name: "icon-300.png",
+            size: 512
+        }]
     });
     // TODO: add all platforms
     deferred.resolve(platforms);
@@ -240,6 +244,10 @@ var getPlatformSplashs = function() {
             name: 'landscape-xhdpi.png',
             width: 1280,
             height: 720
+        }, {
+            name: 'cover-store.png',
+            width: 1024,
+            height: 500
         }]
     });
 
