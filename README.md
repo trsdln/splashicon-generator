@@ -12,11 +12,17 @@ Consider using the base icon and splash images in the `model` folder, so that im
 
 ### Usage
 
-Create an ```icon.png``` and a ```splash.png``` file in the root folder of your cordova project and run:
+Create an ```icon.png``` and a ```splash.png``` file in a 'model' folder under the root folder of your cordova project and run:
 
      $ splashicon-generator
 
 For optimal results, your icon file has to be square, and at least 1024x1024px and your splash file has a vertical rectangle, and at least 2208x3925px.
+
+You can change the default folder for the base images using the argument `imagespath`. Consider the following example:
+
+     $ splashicon-generator --imagespath="project/assets"
+
+This will look for an ```icon.png``` and a ```splash.png``` in the **project/assets** folder under the root folder of your cordova project.
 
 ---
 

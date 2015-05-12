@@ -6,6 +6,7 @@ var colors = require('colors');
 var _ = require('underscore');
 var Q = require('q');
 var nodeFs = require('node-fs');
+var argv = require('yargs').argv;
 
 /**
  * Check which platforms are added to the project and return their icon names and sized
@@ -271,8 +272,10 @@ var getPlatformSplashs = function() {
  * TODO: add option to get these values as CLI params
  */
 var settings = {};
-settings.ICON_FILE = 'model/icon.png';
-settings.SPLASH_FILE = 'model/splash.png';
+var baseImagesPath = argv.imagespath || argv.ip || 'model';
+settings.ICON_FILE = path.join(baseImagesPath, 'icon.png');
+settings.SPLASH_FILE = path.join(baseImagesPath, 'splash.png');
+
 /**
  * @var {Object} console utils
  */
@@ -503,7 +506,7 @@ Q.all([validIconExists(), validSplashExists()])
         var promise;
 
         if (!hasIcon && !hasSplash) {
-            console.log(arguments);
+            //console.log(arguments);
             promise = Q.reject();
         }
 
