@@ -43,9 +43,6 @@ Include in your ```config.xml``` file:
 ```xml
 <icon src="icon.png" />
 
-<!-- App Store -->
-<icon src="res/icons/ios/icon-1024.png" gap:platform="ios" width="1024" height="1024" />
-
 <!-- iOS 8.0+ -->
 <!-- iPhone 6 Plus  -->
 <icon src="res/icons/ios/icon-60@3x.png" gap:platform="ios" width="180" height="180" />
