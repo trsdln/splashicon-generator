@@ -1,3 +1,10 @@
 #!/usr/bin/env node
 
-require('./../index.js');
+var generator = require('./../index.js');
+var argv = require('yargs').argv;
+
+var baseImagesPath = argv.imagespath || argv.ip || 'model';
+generator.generate({
+	ICON_FILE: path.join(baseImagesPath, 'icon.png'),
+	SPLASH_FILE: path.join(baseImagesPath, 'splash.png')
+});

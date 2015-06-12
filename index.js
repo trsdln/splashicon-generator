@@ -6,7 +6,6 @@ var colors = require('colors');
 var _ = require('underscore');
 var Q = require('q');
 var nodeFs = require('node-fs');
-var argv = require('yargs').argv;
 
 /**
  * Check which platforms are added to the project and return their icon names and sized
@@ -17,129 +16,98 @@ var argv = require('yargs').argv;
 var getPlatformIcons = function() {
     var deferred = Q.defer();
     var platforms = [];
+    //ok
     platforms.push({
         name: 'ios',
         isAdded: true,
         iconsPath: 'res/icons/ios/',
         icons: [
             // Default icon (avoid Apple submit error ITMS-90032)
-            {
-                name: "../../../icon.png",
-                size: 57
-            },
+            { name: "../../../icon.png", size: 57 },
             // iOS 8.0+, iPhone 6 Plus
-            {
-                name: "icon-60@3x.png",
-                size: 180
-            },
+            { name:'icon-60-3x.png', size:180 },
             // iOS 7.0+, iPhone / iPod Touch  -->
-            {
-                name: "icon-60.png",
-                size: 60
-            }, {
-                name: "icon-60@2x.png",
-                size: 120
-            },
+            { name:'icon-60.png', size:60 },
+            { name:'icon-60-2x.png', size:120 },
             // iPad -->
-            {
-                name: "icon-76.png",
-                size: 76
-            }, {
-                name: "icon-76@2x.png",
-                size: 152
-            },
+            { name:'icon-76.png', size:76 },
+            { name:'icon-76-2x.png', size:152 },
             // iOS 6.1, Spotlight Icon -->
-            {
-                name: "icon-40.png",
-                size: 40
-            }, {
-                name: "icon-40@2x.png",
-                size: 80
-            },
+            { name:'icon-40.png', size:40 },
+            { name:'icon-40-2x.png', size:80 },
             // iPhone / iPod Touch -->
-            {
-                name: "icon.png",
-                size: 57
-            }, {
-                name: "icon@2x.png",
-                size: 114
-            },
+            { name:'icon-57.png', size:57 },
+            { name:'icon-57-2x.png', size:114 },
             // iPad -->
-            {
-                name: "icon-72.png",
-                size: 72
-            }, {
-                name: "icon-72@2x.png",
-                size: 144
-            },
+            { name:'icon-72.png', size:72 },
+            { name:'icon-72-2x.png', size:144 },
             // iPhone Spotlight and Settings Icon -->
-            {
-                name: "icon-small.png",
-                size: 29
-            }, {
-                name: "icon-small@2x.png",
-                size: 58
-            },
+            { name:'icon-small.png', size:29 },
+            { name:'icon-small-2x.png', size:58 },
             // iPad Spotlight and Settings Icon -->
-            {
-                name: "icon-50.png",
-                size: 50
-            }, {
-                name: "icon-50@2x.png",
-                size: 100
-            },
-            // App Store
-            {
-                name: "icon-1024.jpg",
-                size: 1024
-            }
+            { name:'icon-50.png', size:50 },
+            { name:'icon-50-2x.png', size:100 }
         ]
     });
 
+    //ok
     platforms.push({
         name: 'android',
         iconsPath: 'res/icons/android/',
         isAdded: true,
-        icons: [{
-            name: 'icon-ldpi.png',
-            size: 36
-        }, {
-            name: 'icon-mdpi.png',
-            size: 48
-        }, {
-            name: 'icon-hdpi.png',
-            size: 72
-        }, {
-            name: 'icon-xhdpi.png',
-            size: 96
-        }, {
-            name: 'icon-xxhdpi.png',
-            size: 144
-        }, {
-            name: 'icon-xxxhdpi.png',
-            size: 192
-        }, {
-            name: "icon-512.png",
-            size: 512
-        }]
+        icons: [
+            { name:'icon-36-ldpi.png', size: 36, density:'ldpi' },
+            { name:'icon-48-mdpi.png', size: 48, density:'mdpi' },
+            { name:'icon-72-hdpi.png', size: 72, density:'hdpi' },
+            { name:'icon-96-xhdpi.png', size: 96, density:'xhdpi' },
+            { name:'icon-144-xxhdpi.png', size: 144, density:'xxhdpi' },
+            { name:'icon-192-xxxhdpi.png', size: 192, density:'xxxhdpi' },
+        ]
     });
 
+    //ok
     platforms.push({
         name: 'wp8',
         iconsPath: 'res/icons/wp8/',
         isAdded: true,
-        icons: [{
-            name: 'ApplicationIcon.png',
-            size: 99
-        }, {
-            name: 'Background.png',
-            size: 159
-        }, {
-            name: "icon-300.png",
-            size: 512
-        }]
+        icons: [
+            { name: 'ApplicationIcon.png', size: 99 },
+            { name: 'Background.png', size: 159 },
+        ]
     });
-    // TODO: add all platforms
+
+    //ok
+    platforms.push({
+        name: 'windows',
+        iconsPath: 'res/icons/windows/',
+        isAdded: true,
+        icons: [
+            { name:'Square150x150Logo.scale-100.png', size:150 },
+            { name:'Square150x150Logo.scale-240.png', size:360 },
+            { name:'Square30x30Logo.scale-100.png', size:30 },
+            { name:'Square310x310Logo.scale-100.png', size:310 },
+            { name:'Square44x44Logo.scale-240.png', size:106 },
+            { name:'Square70x70Logo.scale-100.png', size:70 },
+            { name:'Square71x71Logo.scale-240.png', size:170 },
+            { name:'StoreLogo.scale-100.png', size:50 },
+            { name:'StoreLogo.scale-240.png', size:120 },
+            { name:'Wide310x150Logo.scale-100.png', size:310 },
+            { name:'Wide310x150Logo.scale-240.png', size:744 },
+        ]
+    });
+
+    //ok
+    platforms.push({
+        name: 'store',
+        iconsPath: 'store/icons/',
+        isAdded: true,
+        icons: [
+            { path:'./android/', name: "icon-512.png", size: 512 },
+            { path:'./wp8/', name: "icon-300.png", size: 300 },
+            { path:'./ios/', name: "icon-1024.jpg", size: 1024 } // App Store
+        ]
+    });
+
     deferred.resolve(platforms);
     return deferred.promise;
 };
@@ -153,114 +121,72 @@ var getPlatformIcons = function() {
 var getPlatformSplashs = function() {
     var deferred = Q.defer();
     var platforms = [];
+
+    //ok
     platforms.push({
         name: 'ios',
         isAdded: true,
-        splashPath: 'res/splash/ios/',
-        splash: [{
-                name: 'Default.png',
-                width: 320,
-                height: 480
-            }, // iPhone
-            {
-                name: 'Default@2x.png',
-                width: 640,
-                height: 960
-            }, // iPhone Retina
-            {
-                name: 'Default-568h@2x.png',
-                width: 640,
-                height: 1136
-            }, // iPhone 5 Retina
-            {
-                name: 'Default-667h@2x.png',
-                width: 750,
-                height: 1334
-            }, // iPhone 6
-            {
-                name: 'Default-Portrait-736h@3x.png',
-                width: 1242,
-                height: 2208
-            }, // iPhone 6 Plus
-            {
-                name: 'Default-Landscape-736h@3x.png',
-                width: 2208,
-                height: 1242
-            }, // iPhone 6 Plus
-            {
-                name: 'Default-Portrait.png',
-                width: 768,
-                height: 1024
-            }, // iPad
-            {
-                name: 'Default-Landscape.png',
-                width: 1024,
-                height: 768
-            }, // iPad
-            {
-                name: 'Default-Portrait@2x.png',
-                width: 1536,
-                height: 2048
-            }, // iPad Retina
-            {
-                name: 'Default-Landscape@2x.png',
-                width: 2048,
-                height: 1536
-            } // iPad Retina
+        splashPath: 'res/screens/ios/',
+        splash: [
+            { name:"screen-iphone-portrait.png", width:320, height:480 },           // iPhone
+            { name:"screen-iphone-portrait-2x.png", width:640, height:960 },        // iPhone Retina
+            { name:"screen-ipad-portrait.png", width:768, height:1024 },            // iPad
+            { name:"screen-ipad-portrait-2x.png", width:1536, height:2048 },        // iPad Retina
+            { name:"screen-ipad-landscape.png", width:1024, height:768 },           // iPad
+            { name:"screen-ipad-landscape-2x.png", width:2048, height:1536 },       // iPad Retina
+            { name:"screen-iphone-568h-2x.png", width:640, height:1136 },           // iPhone 5 Retina
+            { name:"screen-iphone-portrait-667h.png", width:750, height:1334 },     // iPhone 6
+            { name:"screen-iphone-portrait-736h.png", width:1242, height:2208 },    // iPhone 6 Plus
+            { name:"screen-iphone-landscape-736h.png", width:2208, height:1242 },   // iPhone 6 Plus
         ]
     });
+
+    //ok
     platforms.push({
         name: 'android',
         isAdded: true,
-        splashPath: 'res/splash/android/',
-        splash: [{
-            name: 'ldpi.png',
-            width: 200,
-            height: 320
-        }, {
-            name: 'landscape-ldpi.png',
-            width: 320,
-            height: 200
-        }, {
-            name: 'mdpi.png',
-            width: 320,
-            height: 480
-        }, {
-            name: 'landscape-mdpi.png',
-            width: 480,
-            height: 320
-        }, {
-            name: 'hdpi.png',
-            width: 480,
-            height: 800
-        }, {
-            name: 'landscape-hdpi.png',
-            width: 800,
-            height: 480
-        }, {
-            name: 'xhdpi.png',
-            width: 720,
-            height: 1280
-        }, {
-            name: 'landscape-xhdpi.png',
-            width: 1280,
-            height: 720
-        }, {
-            name: 'cover-store.png',
-            width: 1024,
-            height: 500
-        }]
+        splashPath: 'res/screens/android/',
+        splash: [
+            { name:"screen-ldpi-portrait.png", width: 320, height: 426, density:"port-ldpi" }, // 200x320
+            { name:"screen-ldpi-landscape.png", width: 426, height: 320, density:"land-ldpi" }, // 320x200
+            { name:"screen-hdpi-portrait.png", width: 480, height: 640, density:"port-hdpi" }, // 320x480
+            { name:"screen-hdpi-landscape.png", width: 640, height: 480, density:"land-hdpi" }, // 480x320
+            { name:"screen-mdpi-portrait.png", width: 320, height: 470, density:"port-mdpi" }, // 480x800
+            { name:"screen-mdpi-landscape.png", width: 470, height: 320, density:"land-mdpi" }, // 800x480
+            { name:"screen-xhdpi-portrait.png", width: 720, height: 960, density:"port-xhdpi" }, // 720x1280
+            { name:"screen-xhdpi-landscape.png", width: 960, height: 720, density:"land-xhdpi" } // 1280x720
+        ]
     });
 
+    //ok
     platforms.push({
         name: 'wp8',
         isAdded: true,
-        splashPath: 'res/splash/wp8/',
-        splash: [{
-            name: 'SplashScreenImage.jpg',
-            width: 480,
-            height: 800
-        }]
+        splashPath: 'res/screens/wp8/',
+        splash: [
+            { width:480, height:800, name:"SplashScreenImage.jpg" }
+        ]
+    });
+
+    //ok
+    platforms.push({
+        name: 'windows',
+        isAdded: true,
+        splashPath: 'res/screens/windows/',
+        splash: [
+            { width:620, height:300, name:"SplashScreen.scale-100.png" },
+            { width:1152, height:1920, name:"SplashScreen.scale-240.png" },
+            { width:1152, height:1920, name:"SplashScreenPhone.scale-240.png" },
+        ]
+    });
+
+    platforms.push({
+        name: 'store',
+        isAdded: true,
+        splashPath: 'store/screens/',
+        splash: [
+            { path: './android/', name: 'cover-store.png', width: 1024, height: 500 },
+        ]
     });
 
     deferred.resolve(platforms);
@@ -272,9 +198,8 @@ var getPlatformSplashs = function() {
  * TODO: add option to get these values as CLI params
  */
 var settings = {};
-var baseImagesPath = argv.imagespath || argv.ip || 'model';
-settings.ICON_FILE = path.join(baseImagesPath, 'icon.png');
-settings.SPLASH_FILE = path.join(baseImagesPath, 'splash.png');
+settings.ICON_FILE = path.join('model', 'icon.png');
+settings.SPLASH_FILE = path.join('model', 'splash.png');
 
 /**
  * @var {Object} console utils
@@ -497,37 +422,44 @@ var validSplashExists = function() {
     return deferred.promise;
 };
 
-display.header('Checking Splash & Icon');
 
-Q.all([validIconExists(), validSplashExists()])
-    .then(function(results) {
-        var hasIcon = results[0] === true;
-        var hasSplash = results[1] === true;
-        var promise;
+function generate(options) {
+    settings = options || settings;
+    display.header('Checking Splash & Icon');
+    return Q.all([validIconExists(), validSplashExists()])
+        .then(function(results) {
+            var hasIcon = results[0] === true;
+            var hasSplash = results[1] === true;
+            var promise;
 
-        if (!hasIcon && !hasSplash) {
-            //console.log(arguments);
-            promise = Q.reject();
-        }
+            if (!hasIcon && !hasSplash) {
+                //console.log(arguments);
+                promise = Q.reject();
+            }
 
-        if (hasIcon) {
-            promise = Q.when(promise)
-                .then(getPlatformIcons)
-                .then(generateIcons);
-        }
+            if (hasIcon) {
+                promise = Q.when(promise)
+                    .then(getPlatformIcons)
+                    .then(generateIcons);
+            }
 
-        if (hasSplash) {
-            promise = Q.when(promise)
-                .then(getPlatformSplashs)
-                .then(generateSplashes);
-        }
+            if (hasSplash) {
+                promise = Q.when(promise)
+                    .then(getPlatformSplashs)
+                    .then(generateSplashes);
+            }
 
-        return Q.when(promise);
-    })
-    .catch(function(err) {
-        if (err) {
-            console.log(err);
-        }
-    }).then(function() {
-        console.log('');
-    });
+            return Q.when(promise);
+        })
+        .catch(function(err) {
+            if (err) {
+                console.log(err);
+            }
+        }).then(function() {
+            console.log('');
+        });
+}
+
+module.exports = {
+    generate: generate
+};
