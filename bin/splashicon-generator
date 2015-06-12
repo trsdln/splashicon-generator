@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-var generator = require('./../index.js');
+var path = require('path');
+var generator = require(path.resolve(__dirname,'../index'));
 var argv = require('yargs').argv;
 
 var baseImagesPath = argv.imagespath || argv.ip || 'model';
