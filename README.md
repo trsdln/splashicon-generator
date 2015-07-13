@@ -107,6 +107,9 @@ Include in your ```config.xml``` file:
 <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="res/screens/android/screen-xhdpi-portrait.png" />
 
 <gap:splash gap:platform="winphone" src="res/screens/wp8/SplashScreenImage.jpg" />
+<gap:splash gap:platform="winphone" src="res/screens/wp8/SplashScreenImage.screen-720p.jpg" />
+<gap:splash gap:platform="winphone" src="res/screens/wp8/SplashScreenImage.screen-WVGA.jpg" />
+<gap:splash gap:platform="winphone" src="res/screens/wp8/SplashScreenImage.screen-WXGA.jpg" />
 ```
 
 ---
