@@ -1,6 +1,6 @@
 {
   "name": "splashicon-generator",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Automatic icon & splash resizing for PhoneGap",
   "main": "index.js",
   "preferGlobal": "false",
@@ -21,7 +21,10 @@
     "splash",
     "resize"
   ],
-  "author": "Eduardo Eidelwein Berlitz",
+  "author": {
+    "name": "Eduardo Eidelwein Berlitz",
+    "email": "eberlitz@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/eberlitz/splashicon-generator/issues"
@@ -35,5 +38,9 @@
     "underscore": "^1.6.0",
     "xml2js": "^0.4.3",
     "yargs": "^3.8.0"
-  }
+  },
+  "contributors": [{
+    "name": "Luiz Pereira de Souza Filho",
+    "email": "lpsouza@gmail.com"
+  }]
 }

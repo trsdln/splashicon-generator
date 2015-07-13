@@ -69,8 +69,8 @@ Include in your ```config.xml``` file:
 <icon gap:platform="android" gap:qualifier="mdpi" src="res/icons/android/icon-48-mdpi.png" />
 <icon gap:platform="android" gap:qualifier="hdpi" src="res/icons/android/icon-72-hdpi.png" />
 <icon gap:platform="android" gap:qualifier="xhdpi" src="res/icons/android/icon-96-xhdpi.png" />
-<icon gap:platform="android" gap:qualifier="xxhdpi" path="res/icons/android/icon-144-xxhdpi.png" />
-<icon gap:platform="android" gap:qualifier="xxxhdpi" path="res/icons/android/icon-192-xxxhdpi.png" />
+<icon gap:platform="android" gap:qualifier="xxhdpi" src="res/icons/android/icon-144-xxhdpi.png" />
+<icon gap:platform="android" gap:qualifier="xxxhdpi" src="res/icons/android/icon-192-xxxhdpi.png" />
 
 <icon gap:platform="winphone" src="res/icons/wp8/ApplicationIcon.png" />
 <icon gap:platform="winphone" src="res/icons/wp8/Background.png" gap:role="background" />
