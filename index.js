@@ -159,12 +159,16 @@ var getPlatformSplashs = function() {
     });
 
     //ok
+    // https://msdn.microsoft.com/en-us/library/windows/apps/ff769511(v=vs.105).aspx
     platforms.push({
         name: 'wp8',
         isAdded: true,
         splashPath: 'res/screens/wp8/',
         splash: [
-            { width:480, height:800, name:"SplashScreenImage.jpg" }
+            { width: 768, height: 1280, name:"SplashScreenImage.jpg" },
+            { width: 480, height: 800, name:"SplashScreenImage.screen-WVGA.jpg" },
+            { width: 768, height: 1280, name:"SplashScreenImage.screen-WXGA.jpg" },
+            { width: 720, height: 1280, name:"SplashScreenImage.screen-720p.jpg" }
         ]
     });
 
