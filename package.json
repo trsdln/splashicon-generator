@@ -1,11 +1,11 @@
 {
   "name": "splashicon-generator",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Automatic icon & splash resizing for PhoneGap",
   "main": "index.js",
   "preferGlobal": "false",
-  "directories": {
-    "bin": "./bin"
+  "bin": {
+    "splashicon-generator": "./bin/splashicon-generator"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
