@@ -108,6 +108,8 @@ var getPlatformIcons = function() {
         ]
     });
 
+    platforms = settings.ICON_PLATFORMS || platforms
+
     deferred.resolve(platforms);
     return deferred.promise;
 };
@@ -192,6 +194,8 @@ var getPlatformSplashs = function() {
             { path: './android/', name: 'cover-store.png', width: 1024, height: 500 },
         ]
     });
+
+    platforms = settings.SPLASH_PLATFORMS || platforms
 
     deferred.resolve(platforms);
     return deferred.promise;
