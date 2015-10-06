@@ -8,4 +8,4 @@ var baseImagesPath = argv.imagespath || argv.ip || 'model';
 generator.generate({
 	ICON_FILE: path.join(baseImagesPath, 'icon.png'),
 	SPLASH_FILE: path.join(baseImagesPath, 'splash.png')
-});
+}); 
