@@ -106,7 +106,8 @@ var cropImage = function (imagePath, outDirectory, sizeEntry) {
 
 module.exports = {
   generate: function (configName) {
-    var config = require(configName);
+    var config = JSON.parse(fs.readFileSync(configName, 'utf8'));
+
     config.forEach(sourceEntry => {
       var outDirectory = sourceEntry.outDirectory;
       var imagePath = sourceEntry.source;
