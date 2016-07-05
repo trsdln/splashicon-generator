@@ -2,28 +2,31 @@ var fs = require('fs');
 var path = require('path');
 var xml2js = require('xml2js');
 var imageMagic = require('imagemagick');
-var colors = require('colors');
 var _ = require('underscore');
 var Q = require('q');
 var mkdirp = require('mkdirp');
 
-/**
- * @var {Object} console utils
- */
-var display = {};
-display.success = function (str) {
-  str = '✓  '.green + str;
-  console.log('  ' + str);
+require('colors');
+
+var display = {
+  success: function (str) {
+    str = '✓  '.green + str;
+    console.log('  ' + str);
+  },
+  error: function (str) {
+    str = '✗  '.red + str;
+    console.log('  ' + str);
+  },
+  imageInfoLog: function (fileName, sizeEntry) {
+    this.success(fileName + ' created => ' + sizeEntry.width + 'x' + sizeEntry.height);
+  }
 };
-display.error = function (str) {
-  str = '✗  '.red + str;
-  console.log('  ' + str);
+
+
+var extractExtension = function (fileName) {
+  return fileName.replace(/.*\.(\w+)$/i, '$1').toLowerCase();
 };
-display.header = function (str) {
-  console.log('');
-  console.log(' ' + str.cyan.underline);
-  console.log('');
-};
+
 
 var checkDirectory = function (outDirectory) {
   var deferred = Q.defer();
@@ -38,13 +41,7 @@ var checkDirectory = function (outDirectory) {
   return deferred.promise;
 };
 
-/**
- * Resizes and creates a new icon in the platform's folder.
- *
- * @param  {Object} platform
- * @param  {Object} icon
- * @return {Promise}
- */
+
 var resizeImage = function (imagePath, outDirectory, sizeEntry) {
   var deferred = Q.defer();
   try {
@@ -53,15 +50,15 @@ var resizeImage = function (imagePath, outDirectory, sizeEntry) {
       srcPath: imagePath,
       dstPath: filePath,
       quality: 1,
-      format: sizeEntry.fileName.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
+      format: extractExtension(sizeEntry.fileName),
       width: sizeEntry.width,
       height: sizeEntry.height
     }, function (err, stdout, stderr) {
       if (err) {
         deferred.reject(err);
       } else {
+        display.imageInfoLog(filePath, sizeEntry);
         deferred.resolve();
-        display.success(sizeEntry.fileName + ' created');
       }
     });
   } catch (error) {
@@ -71,13 +68,6 @@ var resizeImage = function (imagePath, outDirectory, sizeEntry) {
 };
 
 
-/**
- * Crops and creates a new splash in the platform's folder.
- *
- * @param  {Object} platform
- * @param  {Object} splash
- * @return {Promise}
- */
 var cropImage = function (imagePath, outDirectory, sizeEntry) {
   var deferred = Q.defer();
   try {
@@ -86,15 +76,15 @@ var cropImage = function (imagePath, outDirectory, sizeEntry) {
       srcPath: imagePath,
       dstPath: filePath,
       quality: 1,
-      format: sizeEntry.fileName.replace(/.*\.(\w+)$/i, '$1').toLowerCase(),
+      format: extractExtension(sizeEntry.fileName),
       width: sizeEntry.width,
       height: sizeEntry.height
     }, function (err, stdout, stderr) {
       if (err) {
         deferred.reject(err);
       } else {
+        display.imageInfoLog(filePath, sizeEntry);
         deferred.resolve();
-        display.success(sizeEntry.fileName + ' created');
       }
     });
   } catch (error) {
@@ -113,15 +103,15 @@ module.exports = {
       var imagePath = sourceEntry.source;
       var promise;
 
-      checkDirectory(outDirectory).catch(err=> display.error(err)).then(function () {
+      checkDirectory(outDirectory).catch(err => display.error(err)).then(function () {
         sourceEntry.sizes.forEach(sizeEntry => {
-          if (sizeEntry.isCrop) {
+          if (sourceEntry.isCrop) {
             promise = cropImage(imagePath, outDirectory, sizeEntry);
           } else {
             promise = resizeImage(imagePath, outDirectory, sizeEntry);
           }
 
-          return Q.when(promise).catch(err=> display.error(err));
+          return Q.when(promise).catch(err => display.error(err));
         });
       });
     });

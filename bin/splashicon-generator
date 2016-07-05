@@ -6,4 +6,5 @@ var argv = require('yargs').argv;
 
 var configName = argv.config || './image-sizes.json';
 
-generator.generate(configName); 
+
+generator.generate(configName);
